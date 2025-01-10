@@ -4,22 +4,22 @@ Assignment : 01
 Date : 10 Jan 2025
 Course Name : NLP-5 by Innovative Skills
 My Name : Musfiqur Rahman Sanim (Musfiq)
-Project Name : Youtube comment sentiment analysis - NLP Pipeline
+Project Name : Google Review sentiment analysis - NLP Pipeline
 
-Domain: Social Media sentiment analysis (Youtube)
-Target Skill: Youtube Data API, Selenium, spaCy,scikit-learn,Gensim,BERT,Tensorflow,pytorch
+Domain: Social Media sentiment analysis (Google)
+Target Skill: Google places API, Selenium, spaCy,scikit-learn,Gensim,BERT,Tensorflow,pytorch
                 streamlit,Matplotlib.
 
 Feasibility Check: Possible or not on Preset Time and Budget.
 
-Data Collection: (Generalize) 
+Data Collection: (Generalize)
     1. Existing Dataset(open sourse)
         -Local Machine
         -Database Paid API(SQL)
     2. Less Data 
         -Augmentation(Data Generation)
 
-For Youtube : Youtube Data API
+For Google : Google places API
 
 *If Dataset isnt available in your computer
     - Public Dataset: Web scrapping,Mannual, Survey
