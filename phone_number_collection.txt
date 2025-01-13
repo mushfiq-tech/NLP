@@ -1,0 +1,65 @@
+--------------------IN THE NAME OF ALLAH----------------
+
+Assignment : 01
+Date : 10 Jan 2025
+Course Name : NLP-5 by Innovative Skills
+My Name : Musfiqur Rahman Sanim (Musfiq)
+Project Name : Requirement analysis for collecting phone numbers- NLP Pipeline
+
+Domain: Phone Number Collection (Clothing Showroom)
+Target Skill: Google maps places API, Selenium, spaCy,scikit-learn,Gensim,BERT,Tensorflow,pytorch
+                streamlit,Matplotlib.
+
+Feasibility Check: 
+    Expences = $0.003 per Contact Data request
+    
+Data Collection: (Generalize)
+    1. Existing Dataset(open sourse)
+        -Local Machine
+        -Database Paid API(SQL)
+    2. Less Data 
+        -Augmentation(Data Generation)
+
+For Google : Google places API
+
+*If Dataset isnt available in your computer
+    - Public Dataset: Web scrapping,Mannual, Survey
+
+Data Cleaning:
+    -Tokenization = Break the comments into words or tokens.
+    -Lowercasing = Convert all text to lowercase.
+    -Stopword Remooval = Remove common words (the,is etc).
+    -Lemmatization / Stemming = Reduce words to their root forms.
+    -Removing Punctuation = Remove unnecessary symbols.
+    -Handling Emoticons/Emojis = convert or remove emojis as per requirements.
+    -Handling URLs = remove or replace URLs with placeholders. 
+    -Hashtags and Mentions = Remove or replace them with placeholders.
+
+Data Validation:
+    - By own or any Expert or freelance data validator
+
+Model Development:
+    Feature Extraction:
+        - Bag of Words(BoW) = Create vector for each comment based on word frequency.
+        - TF-IDF (weight) = Words importance relative to corpus
+        - word Embeddings = Use Pre-trained models like word2vec,Glove,BERT to capture semantic meaning.
+        - Sentiment-Specific Features = Identify words and phrases and assign scores.
+
+    Sentiment analysis Model:(Classify the sentiment of each comment e.g., positive , negative,neutral).
+        - Rule-Based sentiment analysis = use predefined lexicon of words with sentiment scorces.
+        - Machine learning Classifier = Train a sentiment Classifier (Logistic Regression, SVM, Random forest).
+        - Deep Learning = Use LSTM or Transformers (BERT) for more advanced sentiment Classification.
+
+Model Evaluation:(Evaluate model performance)
+    -Metrics
+        = Accuracy
+        = Precisiom , recall
+        = Confusion Matrix
+    
+Post-Processing and visualization:
+    - Display Sentiment distribution( chart of positive , negative , neutral comments)
+    - Visualize word clouds of positive/negative comments to identify trends.
+
+Model Deployment:
+    -Build a REST API using Flask or FastAPI.
+    - Integrate with a web application or dashboard (Streamlit or ccutom front end)
