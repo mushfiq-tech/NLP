@@ -12,6 +12,7 @@ Target Skill: Google maps places API, Selenium, spaCy,scikit-learn,Gensim,BERT,T
 
 Feasibility Check: 
     Expences = $0.003 per Contact Data request
+        https://developers.google.com/maps/documentation/places/web-service/usage-and-billing
     
 Data Collection: (Generalize)
     1. Existing Dataset(open sourse)
