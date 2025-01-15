@@ -1,66 +1,87 @@
 --------------------IN THE NAME OF ALLAH----------------
 
 Assignment : 01
-Date : 10 Jan 2025
+Date : 15 Jan 2025
 Course Name : NLP-5 by Innovative Skills
 My Name : Musfiqur Rahman Sanim (Musfiq)
-Project Name : Requirement analysis for collecting phone numbers- NLP Pipeline
+Project Name : Collecting phone numbers of clothing showrooms in Dhaka that lack websites.
 
 Domain: Phone Number Collection (Clothing Showroom)
-Target Skill: Google maps places API, Selenium, spaCy,scikit-learn,Gensim,BERT,Tensorflow,pytorch
+Target Skill: Google maps places API, Selenium,Tensorflow,pytorch
                 streamlit,Matplotlib.
 
 Feasibility Check: 
     Expences = $0.003 per Contact Data request
         https://developers.google.com/maps/documentation/places/web-service/usage-and-billing
-    
-Data Collection: (Generalize)
-    1. Existing Dataset(open sourse)
-        -Local Machine
-        -Database Paid API(SQL)
-    2. Less Data 
-        -Augmentation(Data Generation)
 
-For Google : Google places API
 
-*If Dataset isnt available in your computer
-    - Public Dataset: Web scrapping,Mannual, Survey
+Requirement Identification:
+    -How would you identify clothing showrooms without websites using Google?
+    = I would use tailored query like using keywords "showroom" and filter out where the "website" field is null or missing between the website and phone number option.
 
-Data Cleaning:
-    -Tokenization = Break the comments into words or tokens.
-    -Lowercasing = Convert all text to lowercase.
-    -Stopword Remooval = Remove common words (the,is etc).
-    -Lemmatization / Stemming = Reduce words to their root forms.
-    -Removing Punctuation = Remove unnecessary symbols.
-    -Handling Emoticons/Emojis = convert or remove emojis as per requirements.
-    -Handling URLs = remove or replace URLs with placeholders. 
-    -Hashtags and Mentions = Remove or replace them with placeholders.
+    -What data fields will you collect to ensure meaningful insights about the showrooms?
+    = I will collect their showroom name ,Phone number, Road number and name, Postal code, House number to ensure meaningful insights about the showrooms.
 
-Data Validation:
-    - By own or any Expert or freelance data validator
+Tool Selection:
+    -Which tools or platforms would you recommend for collecting this data manually or semi-automatically?
+    =Google places API and Facebook Graph API.
 
-Model Development:
-    Feature Extraction:
-        - Bag of Words(BoW) = Create vector for each comment based on word frequency.
-        - TF-IDF (weight) = Words importance relative to corpus
-        - word Embeddings = Use Pre-trained models like word2vec,Glove,BERT to capture semantic meaning.
-        - Sentiment-Specific Features = Identify words and phrases and assign scores.
+    -How would you optimize your search queries for efficiency?
+    =I would set precise latitude and longtitude as well as I would be much precise with Radius.
 
-    Sentiment analysis Model:(Classify the sentiment of each comment e.g., positive , negative,neutral).
-        - Rule-Based sentiment analysis = use predefined lexicon of words with sentiment scorces.
-        - Machine learning Classifier = Train a sentiment Classifier (Logistic Regression, SVM, Random forest).
-        - Deep Learning = Use LSTM or Transformers (BERT) for more advanced sentiment Classification.
+Process Design:
+    -Outline a step-by-step process to extract phone numbers of such showrooms manually.
+        =Set up Google Cloud and get an API key.
+        =Query the Google Places API> Filter out showrooms lacking websites..
+        =Extract the place_ids from the search results.
+        =Use the Place Details API to get detailed info (including phone numbers).
+        =Organize and store the data in a structured format.
+        =Manage API rate limits and quotas effectively.
+        =Visualize the data retrived from web.
 
-Model Evaluation:(Evaluate model performance)
-    -Metrics
-        = Accuracy
-        = Precisiom , recall
-        = Confusion Matrix
-    
-Post-Processing and visualization:
-    - Display Sentiment distribution( chart of positive , negative , neutral comments)
-    - Visualize word clouds of positive/negative comments to identify trends.
+    -What measures would you implement to ensure data accuracy?
+        = That is really the toughest part and it requires many steps and accuracy.
+            1. Validate and Cross-Check API Responses
+            2. Handle and Review Partial Data
+            3. Use Fallback Methods for Verifying Phone Numbers
+            4. Rate Limit and Error Handling
+            5. Implement Data Validation Rules
+            6. Check for Real-Time Changes
+            7. Leverage Reviews or User-Generated Data for Verification
+            8. Implement Geographical Validation
+            9. Monitor Changes in API Responses
+            10. Regularly Update Data from the API
+            11. Consider Using Data Quality Metrics
+            12. Manual Auditing
+            13. User Feedback Mechanism
 
-Model Deployment:
-    -Build a REST API using Flask or FastAPI.
-    - Integrate with a web application or dashboard (Streamlit or ccutom front end)
+Legal and Ethical Compliance:
+    -How will you ensure compliance with privacy and data protection laws during the process?
+    =To ensure compliance with privacy and data protection laws during the process of collecting business phone numbers via the Google Places API:
+
+        1.Follow Google’s API Terms of Service.
+        2.Collect only necessary data>Do not collect personal data unless explicitly required and legally allowed.
+        3.Store data for only as long as necessary.
+        4.Provide clear communication, including a privacy policy, explaining how the data is collected and used.
+        5.Ensure a legal basis for data collection, respecting laws like GDPR or CCPA.
+
+    -What steps would you take to prevent overstepping Google's terms of service?
+        =Read and Understand the Terms
+        =Limit API Usage to Business Purposes
+        =Secure API Keys
+        =Monitor and stay within the usage limits and quotas set by Google, using proper rate limiting in the application.
+        =Avoid Reselling Data
+        =Delete or anonymize data after the purpose is fulfilled, complying with Google’s retention and usage rules
+
+Validation of Results:
+    -Once you collect the phone numbers, how will you verify their accuracy and relevance?
+        =Validate phone numbers against other business directories or public listings.
+        =Ensure numbers are in valid formats (e.g., country code, correct length).
+        =Randomly test a subset of phone numbers by calling or manually checking business listings.
+        =Re-query businesses periodically to capture changes or updates in contact details.
+    -Suggest ways to handle duplicate or outdated entries.
+        =Compare entries by name, address, phone number, or place_id and merge similar records.
+        =Track updates with timestamps to identify outdated entries.
+        =Rely on place_id or other unique fields to avoid duplication.
+        =Periodically refresh data from the source to ensure current and accurate information.
+        =Mark outdated entries for review and potential removal.
