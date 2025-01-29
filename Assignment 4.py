@@ -8,12 +8,25 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.114 Safari/537.36")
+driver = webdriver.Chrome(options=chrome_options)
 
 
 driver.get('https://www.daraz.com.bd/products/4g-wifi-i468701703-s2256167219.html')
+time.sleep(20)
+driver.maximize_window()
 
+height = driver.execute_script('return document.body.scrollHeight')
 
+while True:
+    driver.execute_script('window.scrollBy(0, document.body.scrollHeight);')
+    time.sleep(0.2)
+
+    new_height = driver.execute_script('return document.body.scrollHeight')
+    if new_height==height:
+        break
+    height=new_height
 
 
 
@@ -28,7 +41,7 @@ price = driver.find_element(By.XPATH, '//*[@id="module_product_price_1"]/div/div
 product_info['price'] = price
 
 
-product_details = driver.find_element(By.CSS_SELECTOR, '#module_product_detail > div > div > div.pdp-product-desc.height-limit > div.html-content.pdp-product-highlights > ul > li').text
+product_details = driver.find_element(By.XPATH, '//*[@id="module_product_detail"]/div/div/div[1]/div[1]/ul/li').text
 product_info['product_details'] = product_details
 
 
