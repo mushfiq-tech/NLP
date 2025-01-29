@@ -45,6 +45,8 @@ product_details = driver.find_element(By.XPATH, '//*[@id="module_product_detail"
 product_info['product_details'] = product_details
 
 
+image = driver.find_element(By.XPATH, '//*[@id="module_item_gallery_1"]/div/div[1]/div/img').get_attribute('src')
+product_info['image'] = image
 
 print(product_info)
 
