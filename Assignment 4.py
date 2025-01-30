@@ -14,8 +14,9 @@ driver = webdriver.Chrome(options=chrome_options)
 
 
 driver.get('https://www.daraz.com.bd/products/4g-wifi-i468701703-s2256167219.html')
-time.sleep(20)
 driver.maximize_window()
+time.sleep(20)
+
 
 height = driver.execute_script('return document.body.scrollHeight')
 
